@@ -31,7 +31,8 @@ def weighted_average(thetas, sizes):
     sizes:  list of patient counts, same order.
     Return ONE vector: the average of the thetas, where hospital k counts with
     weight n_k / n_total. Hint: sum(theta_k * (n_k / total) for ...)."""
-    raise NotImplementedError("LAB 1: replace this line with the weighted average (see the slide)")
+    total = sum(sizes)
+    return sum(theta * (n / total) for theta, n in zip(thetas, sizes))
 
 
 def run_fedavg(world, verbose=True):
