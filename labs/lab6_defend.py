@@ -62,3 +62,4 @@ if __name__ == "__main__":
         "None of these needed a single patient record. They are coordinator-side controls.",
     ])
     ui.note_prompt(6, "Which defense would you write into the federation policy as the default aggregator, and why?")
+##ANS: Aggregator: trimmed mean, because it restored the boost attack to about 0.81 and cut backdoor success from 57% to 8% at almost no cost without an attack. Minimum participants: 5 per round, because with very few members the sum reveals individual updates and DP becomes expensive (0.678 at noise 1.0 with 3 hospitals vs 0.785 with 5). Noise multiplier: 0.3, which cost nothing for five hospitals in my run (0.814, same as no noise).

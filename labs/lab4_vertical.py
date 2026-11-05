@@ -98,3 +98,4 @@ if __name__ == "__main__":
         "Governance question: who is the controller of a model trained on two organizations' columns?",
     ])
     ui.note_prompt(4, "What crossed the wire in vertical FL, what leaked anyway, and who should own the resulting model?")
+##ANS: Only partial scores and residuals crossed the wire (zero feature values), and vertical FL matched the pooled model (0.834 vs 0.806 for the hospital alone). But the residuals let the insurer recover 100% of the readmission labels, so the model should be jointly controlled under a written agreement, with the hospital as controller of its clinical use.

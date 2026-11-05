@@ -45,3 +45,4 @@ if __name__ == "__main__":
         "Which cell would you defend to the AI Risk Committee? That number goes into the policy in Lab 7.",
     ])
     ui.note_prompt(6, "Pick a noise multiplier for a 5-hospital consortium and give one sentence of justification.")
+##ANS: Default aggregator: trimmed mean, because it restored boost to about 0.81 and cut backdoor success from 57% to 8% at almost no clean cost. Minimum participants: 5 per round, because with two or three members the sum reveals individual updates and the DP cost is steep (0.678 at noise 1.0 with 3 hospitals). Noise multiplier: 0.3 for five hospitals, which cost nothing in my run (0.814)

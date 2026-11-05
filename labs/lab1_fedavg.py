@@ -31,7 +31,12 @@ def weighted_average(thetas, sizes):
     sizes:  list of patient counts, same order.
     Return ONE vector: the average of the thetas, where hospital k counts with
     weight n_k / n_total. Hint: sum(theta_k * (n_k / total) for ...)."""
-    raise NotImplementedError("LAB 1: replace this line with the weighted average (see the slide)")
+    total = sum(sizes)
+    return sum(t * (n / total) for t, n in zip(thetas, sizes))
+    total = sum(sizes)
+    return sum(t * (n / total)
+               for t, n in zip(thetas, sizes))
+
 
 
 def run_fedavg(world, verbose=True):
@@ -87,3 +92,4 @@ if __name__ == "__main__":
         "Every round, each hospital sent 25 numbers (24 weights and a bias). Never a patient.",
     ])
     ui.note_prompt(1, "Which hospital gains most from federating, by how much, and what would you offer Northgate to join?")
+### ANS : Kestrel gains most: 0.696 alone to 0.798 with FedAvg (+0.102), almost the centralized 0.800, while Northgate gains only +0.010 (0.810 to 0.820) and Three Rivers loses 0.008. The arithmetic gives Northgate no reason to join, so I would offer it a permanent steering-committee seat, a reduced cost share, and a model that covers patient types it rarely sees.
