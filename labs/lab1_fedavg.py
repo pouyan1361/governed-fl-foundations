@@ -31,11 +31,12 @@ def weighted_average(thetas, sizes):
     sizes:  list of patient counts, same order.
     Return ONE vector: the average of the thetas, where hospital k counts with
     weight n_k / n_total. Hint: sum(theta_k * (n_k / total) for ...)."""
-    raise NotImplementedError("LAB 1: replace this line with the weighted average (see the slide)")
-
+    total = sum(sizes)
+    return sum(t * (n / total)
+        for t, n in zip(thetas, sizes))
 
 def run_fedavg(world, verbose=True):
-    theta = model.init(world.X_test.shape[1])                      # the global model: all zeros
+    theta = model.init(world.X_test.shape[1])             # the global model: all zeros
     rng = np.random.default_rng(690)
     if verbose:
         print(f"{'round':>5} | {'global acc':>10} | " + " ".join(f"{c.name[:12]:>12}" for c in world.clients))
