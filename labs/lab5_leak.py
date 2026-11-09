@@ -71,3 +71,4 @@ if __name__ == "__main__":
         "A small hospital's own model memorizes its patients; the federated model memorizes them less. Federation helped here.",
     ])
     ui.note_prompt(5, "After this lab, finish the sentence: 'FL keeps raw data at home, but ...'")
+##ANS: FL keeps raw data at home, but a single-patient update reveals that patient exactly (reconstruction error 1.1e-16), and one member can poison everyone (boost drops global accuracy to 0.506). Update norms alone would catch boost (norm 10.37) and the backdoor (8.12) against a normal range of 0.23 to 1.79, but not label flipping (norm 1.04, inside the normal range).

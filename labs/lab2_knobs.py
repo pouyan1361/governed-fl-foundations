@@ -79,3 +79,4 @@ if __name__ == "__main__":
         print(f"  E={a.E}  C={a.C}  ->  {'converged in ' + str(r) + ' rounds' if r else 'did not converge in ' + str(MAX_ROUNDS)}   (accuracy {acc:.3f})")
         print("  Each round moves 25 numbers per participating hospital. Try --grid for the full table.")
     ui.note_prompt(2, "From the grid: which knob cuts rounds the most, and what do you pay for it?")
+##ANS: Local epochs (E) cut rounds the most: 27 rounds at E=1 down to 2 rounds at E=20 with all hospitals participating. The price is more total computation (40 local epochs instead of 27) and more drift toward individual hospitals when data are skewed.

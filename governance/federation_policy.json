@@ -1,26 +1,28 @@
 {
   "policy_name": "Readmission Federation Charter",
-  "policy_version": "1.0",
+  "policy_version": "1.1",
   "coordinator": "Northgate Health IT (rotates annually under the charter)",
   "approved_by": "Federation Steering Committee (one seat per member hospital, one patient representative)",
   "effective_date": "2026-11-02",
   "rationale": "Every number below was agreed BEFORE any model was trained. The coordinator enforces it on every round. Changing it is a committee decision recorded in the charter, not a parameter a model author tunes.",
-
-  "members": ["Northgate", "Three Rivers", "Kestrel", "Pine Valley", "Harbor General"],
+  "members": [
+    "Northgate",
+    "Three Rivers",
+    "Kestrel",
+    "Pine Valley",
+    "Harbor General"
+  ],
   "min_clients_per_round": 3,
   "rounds": 15,
   "max_local_epochs": 5,
-
-  "aggregation": "mean",
+  "aggregation": "trimmed_mean",
   "max_update_norm": 2.0,
-  "reject_update_norm_above": null,
-  "secure_aggregation": true,
+  "reject_update_norm_above": 6.0,
+  "secure_aggregation": false,
   "dp_noise_multiplier": 0.3,
-
   "min_global_accuracy": 0.78,
-  "min_hospital_accuracy": 0.70,
-  "max_hospital_accuracy_gap": 0.10,
-
+  "min_hospital_accuracy": 0.7,
+  "max_hospital_accuracy_gap": 0.1,
   "evaluation_set": "coordinator-held neutral set, 500 consented de-identified rows per member",
   "notes": "secure_aggregation true means the coordinator never sees an individual hospital's update: it cannot clip, reject, or use a robust aggregator (median, trimmed_mean, krum). Honest members clip their own updates to max_update_norm. Setting secure_aggregation to false gives the coordinator those defenses and also lets it read individual updates (see Lab 5b). The charter must choose."
 }

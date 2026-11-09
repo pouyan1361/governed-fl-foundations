@@ -67,3 +67,5 @@ if __name__ == "__main__":
     }
     ui.notice(tips[a.skew] + ["Write down WHICH hospital paid under this skew. Assignment 3 asks you to design these experiments."])
     ui.note_prompt(3, "Which skew hurt the most, which hospital paid, and what fixed it?")
+##ANS: Label skew hurt most: Kestrel (readmission rate 0.48) fell from 0.786 alone to 0.730 with FedAvg, because one global threshold cannot fit three different base rates. Local fine-tuning fixed it (0.792); under concept skew Kestrel was also better alone (0.828 vs 0.804) and fine-tuning restored 0.828.
+

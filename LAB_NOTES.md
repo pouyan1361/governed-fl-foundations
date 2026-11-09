@@ -1,7 +1,7 @@
 # BANA 690A Federated Learning I: Lab Notes
 
-**Name:**
-**GitHub username:**
+**Name:*md abdus salam*
+**GitHub username:*salam-msbana*
 
 One to three sentences per prompt, in your own words, with a number from your
 own run where the prompt asks for one. Commit this file to your fork by the
