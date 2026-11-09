@@ -2,5 +2,9 @@
   "python.defaultInterpreterPath": "/usr/local/bin/python",
   "python.testing.pytestEnabled": true,
   "python.testing.pytestArgs": ["tests"],
-  "files.exclude": {"**/__pycache__": true, "**/.pytest_cache": true}
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true
+  },
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }
