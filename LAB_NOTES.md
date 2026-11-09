@@ -1,6 +1,6 @@
 # BANA 690A Federated Learning I: Lab Notes
 
-**Name:*md abdud salam*
+**Name:*md abdus salam*
 **GitHub username:*salam-msbana*
 
 One to three sentences per prompt, in your own words, with a number from your
