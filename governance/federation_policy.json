@@ -1,6 +1,6 @@
 {
   "policy_name": "Readmission Federation Charter",
-  "policy_version": "1.0",
+  "policy_version": "1.1",
   "coordinator": "Northgate Health IT (rotates annually under the charter)",
   "approved_by": "Federation Steering Committee (one seat per member hospital, one patient representative)",
   "effective_date": "2026-11-02",
@@ -11,10 +11,10 @@
   "rounds": 15,
   "max_local_epochs": 5,
 
-  "aggregation": "mean",
+  "aggregation": "trimmed_mean",
   "max_update_norm": 2.0,
-  "reject_update_norm_above": null,
-  "secure_aggregation": true,
+  "reject_update_norm_above": 6.0,
+  "secure_aggregation": false,
   "dp_noise_multiplier": 0.3,
 
   "min_global_accuracy": 0.78,
